@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  hadoop-pig:
+    image: suhothayan/hadoop-spark-pig-hive:2.9.2
+    container_name: hadoop-pig
+    hostname: hadoop-pig
+    ports:
+      - "9870:50070"   # NameNode Web UI (puede variar, dependiendo de la imagen)
+      - "8088:8088"    # YARN ResourceManager Web UI
+      - "9000:9000"    # HDFS RPC / fs.defaultFS
+    volumes:
+      - hadoop_data:/hadoop/dfs  # persistencia HDFS
+      - ./dump:/dump  
+      - ./scripts:/scripts           # para tus archivos CSV o scripts pig
+    tty: true
+    stdin_open: true
+    command: ["/bin/bash"]
+
+volumes:
+  hadoop_data:
