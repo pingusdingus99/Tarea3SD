@@ -1,5 +1,5 @@
 # Tarea3SD
-Repositorio para la tarea 3 de Sistemas Distribuidos, que utiliza Apache Pig y Hadoop para el analisis de lingüístico entre respuestas gemeradas por LLM (Gemini) y respuestas humanas sobre un dataset de Yahoo! Answers.
+Repositorio para la tarea 3 de Sistemas Distribuidos, que utiliza Apache Pig y Hadoop para el analisis de lingüístico entre respuestas generadas por LLM (Gemini) y respuestas humanas sobre un dataset de Yahoo! Answers.
 
 Clonar repositorio:
 
@@ -9,7 +9,7 @@ cd Tarea3SD
 ```
 
 ## Dump de respuestas a analizar
-Este proyecto va de la mano con las 2 previas entregas que se encuentran en [este repositorio](https://github.com/DarellGutierrez/TareaSD_Entrega2), con el cual se generaron las respuestas LLM, eligiendo guardar en la base de datos aquellas respuestas que superaran nuestro umbral de calidad con respecto a las respuestas humanas del dataset original.
+***Este proyecto va de la mano con las 2 previas entregas que se encuentran en [este repositorio](https://github.com/DarellGutierrez/TareaSD_Entrega2), con el cual se generaron las respuestas LLM, eligiendo guardar en la base de datos aquellas respuestas que superaran nuestro umbral de calidad con respecto a las respuestas humanas del dataset original (definido en la entrega anterior).***
 
 En caso de tener una base de datos **`levantada`** desde la entrega anterior, se requiere extraer las columnas `mejor_respuesta` **(respuesta humana de dataset de Yahoo)** y `respuesta_llm` **(respuesta LLM de Gemini)**, para esto, dentro del directorio raíz de este proyecto ejecuta:
 
