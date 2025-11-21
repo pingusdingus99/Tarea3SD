@@ -1,5 +1,5 @@
 # Tarea3SD
-Repositorio para la tarea 3 de Sistemas Distribuidos, que utiliza Apache Pig y Hadoop para el analisis de datos entre respuestas gemeradas por LLM (Gemini) y respuestas humanas sobre un dataset de Yahoo! Answers.
+Repositorio para la tarea 3 de Sistemas Distribuidos, que utiliza Apache Pig y Hadoop para el analisis de lingüístico entre respuestas gemeradas por LLM (Gemini) y respuestas humanas sobre un dataset de Yahoo! Answers.
 
 Clonar repositorio:
 
