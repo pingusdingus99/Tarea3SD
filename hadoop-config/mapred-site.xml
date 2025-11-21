@@ -1,0 +1,26 @@
+<configuration>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>hadoop-pig</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value></value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value></value>
+    </property>
+    <property>
+        <name>ipc.client.connect.max.retries</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>ipc.client.connect.retry.interval</name>
+        <value>100</value>
+    </property>
+</configuration>

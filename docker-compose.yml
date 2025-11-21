@@ -5,6 +5,11 @@ services:
     image: suhothayan/hadoop-spark-pig-hive:2.9.2
     container_name: hadoop-pig
     hostname: hadoop-pig
+    environment:
+      - MAPREDUCE_JOBHISTORY_ADDRESS=
+      - MAPREDUCE_JOBHISTORY_WEBAPP_ADDRESS=
+      - HADOOP_JOB_HISTORYSERVER=
+      - MAPRED_JOB_HISTORYSERVER=
     ports:
       - "9870:50070"   # NameNode Web UI (puede variar, dependiendo de la imagen)
       - "8088:8088"    # YARN ResourceManager Web UI
@@ -12,7 +17,9 @@ services:
     volumes:
       - hadoop_data:/hadoop/dfs  # persistencia HDFS
       - ./dump:/dump  
-      - ./scripts:/scripts           # para tus archivos CSV o scripts pig
+      - ./scripts:/scripts   
+      - ./hadoop-config:/usr/local/hadoop/etc/hadoop/
+      - ./hadoop-config:/usr/local/hadoop-2.9.2/etc/hadoop/ 
     tty: true
     stdin_open: true
     command: ["/bin/bash"]
