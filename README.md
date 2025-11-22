@@ -24,7 +24,7 @@ sudo docker exec -it tareasd_db_1   psql -U postgres -d db_consultas \
 -c "COPY (SELECT mejor_respuesta FROM preguntas) TO STDOUT" \
 > respuestas.txt
 ```
-Si no se tienen respuestas en una base de datos previa entonces se pueden utilizar los que ya se encuentran en `/dump` subidos en el repositorio que corresponden a **1400 respuestas**.
+Si no se tienen respuestas en una base de datos previa entonces se pueden utilizar los que ya se encuentran en `/dump` subidos en el repositorio que corresponden a **1739 respuestas**.
 
 ## Levantar proyecto
 Una vez se tienen los datos a analizar se levantan los servicios de Pig y Hadoop, ejecutando el siguiente comando desde la raíz del proyecto:
