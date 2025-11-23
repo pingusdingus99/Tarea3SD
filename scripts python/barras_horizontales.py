@@ -1,13 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud  # <--- IMPORTANTE: Nueva librería
-import sys
-import os
+from wordcloud import WordCloud
 
-# --- CONFIGURACIÓN ---
+# CONFIGURACIÓN
 ARCHIVO_ENTRADA = './resultados_yahoo.csv'
 ARCHIVO_SALIDA_BARRAS = 'grafico_barras_yahoo.png'
-ARCHIVO_SALIDA_NUBE = 'nube_palabras_yahoo.png'  # <--- Nuevo archivo de salida
+ARCHIVO_SALIDA_NUBE = 'nube_palabras_yahoo.png'
 TITULO_GRAFICO = 'Top 50 Palabras más Frecuentes (Yahoo)'
 TOP_N = 50
 
@@ -21,7 +19,7 @@ def generar_visualizaciones():
         df['frecuencia'] = pd.to_numeric(df['frecuencia'], errors='coerce')
         df = df.dropna()
         
-        # --- PARTE A: GRÁFICO DE BARRAS (Tu código original) ---
+        # PARTE A: GRÁFICO DE BARRAS
         print("Generando gráfico de barras...")
         
         # Ordenamos para el top y luego invertimos para el gráfico horizontal
@@ -37,7 +35,7 @@ def generar_visualizaciones():
         plt.tight_layout()
         plt.savefig(ARCHIVO_SALIDA_BARRAS, dpi=300)
         plt.close() # Cerramos la figura para liberar memoria
-        print(f"✅ Barras guardadas en: {ARCHIVO_SALIDA_BARRAS}")
+        print(f"Barras guardadas en: {ARCHIVO_SALIDA_BARRAS}")
 
         # --- PARTE B: NUBE DE PALABRAS (Nueva funcionalidad) ---
         print("Generando nube de palabras...")
@@ -60,14 +58,14 @@ def generar_visualizaciones():
 
         # Guardamos la imagen directamente
         wc.to_file(ARCHIVO_SALIDA_NUBE)
-        print(f"✅ Nube guardada en: {ARCHIVO_SALIDA_NUBE}")
+        print(f"Nube guardada en: {ARCHIVO_SALIDA_NUBE}")
 
     except FileNotFoundError:
-        print(f"❌ Error: No se encontró el archivo '{ARCHIVO_ENTRADA}'.")
+        print(f"Error: No se encontró el archivo '{ARCHIVO_ENTRADA}'.")
     except ImportError:
-        print("❌ Error: Falta la librería 'wordcloud'. Instálala con: pip install wordcloud")
+        print("Error: Falta la librería 'wordcloud'. Instálala con: pip install wordcloud")
     except Exception as e:
-        print(f"❌ Ocurrió un error inesperado: {e}")
+        print(f"Ocurrió un error inesperado: {e}")
 
 if __name__ == "__main__":
     generar_visualizaciones()
