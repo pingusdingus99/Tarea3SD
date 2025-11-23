@@ -29,8 +29,8 @@ echo "Mostrando output de pig para respuestas llm"
 hdfs dfs -cat salida_conteo_final_llm/part* || true
 
 echo "Guardando resultados en /dump"
-hdfs dfs -get salida_conteo_final_llm/part-r-00000 /dump/resultados_llm.txt
-hdfs dfs -get salida_conteo_final_yahoo/part-r-00000 /dump/resultados_yahoo.txt
+hdfs dfs -get salida_conteo_final_llm/part-r-00000 /dump/resultados_llm.csv
+hdfs dfs -get salida_conteo_final_yahoo/part-r-00000 /dump/resultados_yahoo.csv
 
 echo "Completado, resultados guardados en /dump, resultados_yahoo.txt y resultados_llm.txt"
 

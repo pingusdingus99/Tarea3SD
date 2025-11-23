@@ -11,18 +11,26 @@ services:
       - HADOOP_JOB_HISTORYSERVER=
       - MAPRED_JOB_HISTORYSERVER=
     ports:
-      - "9870:50070"   # NameNode Web UI (puede variar, dependiendo de la imagen)
+      - "9870:50070"   # NameNode Web UI
       - "8088:8088"    # YARN ResourceManager Web UI
-      - "9000:9000"    # HDFS RPC / fs.defaultFS
+      - "9000:9000"    # HDFS RPC
     volumes:
-      - hadoop_data:/hadoop/dfs  # persistencia HDFS
-      - ./dump:/dump  
-      - ./scripts:/scripts   
+      - hadoop_data:/hadoop/dfs
+      - ./dump:/dump
+      - ./scripts:/scripts 
       - ./hadoop-config:/usr/local/hadoop/etc/hadoop/
-      - ./hadoop-config:/usr/local/hadoop-2.9.2/etc/hadoop/ 
+      - ./hadoop-config:/usr/local/hadoop-2.9.2/etc/hadoop/
     tty: true
     stdin_open: true
     command: ["/bin/bash"]
+
+  python-viz:
+    build: .                # Construye usando el Dockerfile de la carpeta actual
+    container_name: python-viz
+    volumes:
+      - ./scripts:/app 
+      - ./dump:/dump
+    tty: true
 
 volumes:
   hadoop_data:

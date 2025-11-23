@@ -48,3 +48,14 @@ Finalmente ejecutando el script de subir datos a hdfs y ejecutar script de pig *
 Una vez termine su ejecución, los resultados se encontrarán dentro de `/dump` para ser analizados por nuestro módulo con python.
 
 ## Gráfico de datos en barras horizontales y nube de palabras.
+
+Desde otro terminal, entrar al contenedor de python
+```bash
+docker exec -it python-viz bash
+```
+
+Una vez dentro, ejecuta los scripts
+```bash
+python graficos_llm.py
+python graficos_yahoo.py
+```
