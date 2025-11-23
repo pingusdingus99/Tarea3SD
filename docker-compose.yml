@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   hadoop-pig:
     image: suhothayan/hadoop-spark-pig-hive:2.9.2
@@ -24,5 +22,12 @@ services:
     stdin_open: true
     command: ["/bin/bash"]
 
+  python-scripts:
+    build: .
+    container_name: python-scripts
+    volumes:
+      - ./scripts:/app 
+      - ./dump:/dump
+    tty: true
 volumes:
   hadoop_data:
